@@ -1,0 +1,78 @@
+:root {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: normal;
+  font-weight: 500;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  display: grid;
+  place-items: center;
+  height: auto;
+}
+
+.wrapper {
+  width: 37.5rem;
+  background-color: #fff7f0;
+  height: max-content;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 3.2rem;
+
+  padding: 1.8rem 1.6rem 3.2rem;
+}
+
+.logo__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 4.8rem;
+  height: 4.8rem;
+}
+
+.header {
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #030303;
+  margin-bottom: 1.6rem;
+}
+
+.text {
+  color: #7a746e;
+  line-height: 26px;
+}
+
+.btn {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 28px;
+  color: #fff7f0;
+  border-radius: 2.8rem;
+  border: none;
+
+  padding: 0.8rem 2.8rem;
+}
+
+.btn--black {
+  background-color: #030303;
+}
