@@ -1,4 +1,4 @@
-/*       My Work Book a call with me I’d love to have a chat to see how I can help you. The best first step is for us to discuss your project during a free consultation. Then we can move forward from there. Free Consultation Free Consultation */
+/* Book a call with me I’d love to have a chat to see how I can help you. The best first step is for us to discuss your project during a free consultation. Then we can move forward from there. Free Consultation Free Consultation */
 
 export default function App() {
   return (
@@ -89,6 +89,23 @@ export default function App() {
             mobile apps. I&apos;m also handy with a camera!
           </p>
           <button className="btn btn__orange">Free Consultation</button>
+        </div>
+      </section>
+
+      <section className="slider">
+        <h2 className="slider__heading">My Work</h2>
+        <img
+          src="../public/image-slide-3.jpg"
+          alt="slide 3"
+          className="slider__img"
+        />
+        <div className="buttons__box">
+          <button className="slider__btn button__previous">
+            <img src="../public/icon-arrow-left.svg" />
+          </button>
+          <button className="slider__btn button__next">
+            <img src="../public/icon-arrow-right.svg" />
+          </button>
         </div>
       </section>
     </div>
