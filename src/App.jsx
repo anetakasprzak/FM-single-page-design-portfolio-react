@@ -1,4 +1,4 @@
-/*    I’m Amy, and I’d love to work on your next project I love working with others to create beautiful design solutions. I’ve designed everything from brand illustrations to complete mobile apps. I’m also handy with a camera! Free Consultation My Work Book a call with me I’d love to have a chat to see how I can help you. The best first step is for us to discuss your project during a free consultation. Then we can move forward from there. Free Consultation Free Consultation */
+/*       My Work Book a call with me I’d love to have a chat to see how I can help you. The best first step is for us to discuss your project during a free consultation. Then we can move forward from there. Free Consultation Free Consultation */
 
 export default function App() {
   return (
@@ -70,6 +70,25 @@ export default function App() {
             alt="image"
           />
           <p className="grid__text">Motion Graphics</p>
+        </div>
+      </section>
+
+      <section className="amy__about">
+        <img
+          src="../public/image-amy.webp"
+          alt="amy img"
+          className="amy__img"
+        />
+        <div className="amy__text-box">
+          <h2 className="amy__heading">
+            I&apos;m Amy, and I&apos;d love to work on your next project
+          </h2>
+          <p className="text amy__text">
+            I love working with others to create beautiful design solutions.
+            I&apos;ve designed everything from brand illustrations to complete
+            mobile apps. I&apos;m also handy with a camera!
+          </p>
+          <button className="btn btn__orange">Free Consultation</button>
         </div>
       </section>
     </div>
