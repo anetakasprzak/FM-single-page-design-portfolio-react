@@ -83,7 +83,7 @@ export default function App() {
           <h2 className="amy__heading">
             I&apos;m Amy, and I&apos;d love to work on your next project
           </h2>
-          <p className="text amy__text">
+          <p className="amy__text">
             I love working with others to create beautiful design solutions.
             I&apos;ve designed everything from brand illustrations to complete
             mobile apps. I&apos;m also handy with a camera!
