@@ -8,7 +8,7 @@ export default function App() {
           <img src="../public/logo.svg" className="logo" alt="logo" />
           <button className="btn btn--black">Free Consultation</button>
         </div>
-        <div>
+        <div className="header__box">
           <h1 className="header">Design solutions made easy</h1>
           <p className="text">
             With over ten years of experience in various design disciplines,

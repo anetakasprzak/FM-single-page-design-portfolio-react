@@ -137,3 +137,69 @@ body {
   font-weight: 700;
   line-height: normal;
 }
+
+/**********************  TABLET SIZE **********************/
+
+@media screen and (min-width: 48em) {
+  body {
+    font-size: 1.8rem;
+  }
+
+  .wrapper {
+    width: 76.8rem;
+  }
+
+  .heading {
+    gap: 6.4rem;
+    padding: 3.4rem 4rem 6.4rem;
+  }
+
+  .logo {
+    width: 6.4rem;
+    height: 6.4rem;
+  }
+
+  .header__box {
+    padding: 0 4.9rem;
+  }
+
+  .header {
+    font-size: 4.4rem;
+    margin-bottom: 2.7rem;
+  }
+
+  .text {
+    line-height: 28px;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+    padding: 1.4rem 4.5rem;
+  }
+}
+
+/**********************  DESKTOP SIZE **********************/
+
+@media screen and (min-width: 90em) {
+  .wrapper {
+    width: 144rem;
+  }
+
+  .heading {
+    gap: 6.4rem;
+    padding: 3.4rem 16.5rem 6.6rem;
+  }
+
+  .header__box {
+    padding: 0 17rem;
+  }
+
+  .header {
+    font-size: 5.6rem;
+    margin-bottom: 2.3rem;
+  }
+
+  .text {
+    padding: 0 2rem;
+  }
+}
