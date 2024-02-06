@@ -72,6 +72,7 @@ body {
   border: none;
 
   padding: 0.8rem 2.8rem;
+  cursor: pointer;
 }
 
 .btn--black {
@@ -174,7 +175,7 @@ body {
   line-height: 26px;
 }
 
-.btn__orange {
+.btn--orange {
   background-color: #eb7565;
 }
 
@@ -211,6 +212,7 @@ body {
   display: flex;
   padding: 2.4rem;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 /* CTA */
@@ -493,6 +495,21 @@ body {
   .cta__heading {
     font-size: 4rem;
   }
-}
 
-/* PUSH IT TO GITHUB  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! delete this */
+  /* HOVER STATES */
+
+  .btn--black,
+  .btn--orange,
+  .slider__btn {
+    transition: all 0.2s;
+  }
+
+  .btn--black:hover,
+  .slider__btn:hover {
+    background-color: #755cde;
+  }
+
+  .btn--orange:hover {
+    background-color: #f6a560;
+  }
+}

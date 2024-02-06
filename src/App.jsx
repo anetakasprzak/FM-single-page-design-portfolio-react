@@ -86,7 +86,7 @@ export default function App() {
             I&apos;ve designed everything from brand illustrations to complete
             mobile apps. I&apos;m also handy with a camera!
           </p>
-          <button className="btn btn__orange">Free Consultation</button>
+          <button className="btn btn--orange">Free Consultation</button>
         </div>
       </section>
 
@@ -117,7 +117,7 @@ export default function App() {
               consultation. Then we can move forward from there.
             </p>
           </div>
-          <button className="btn btn__orange">Free Consultation</button>
+          <button className="btn btn--orange">Free Consultation</button>
         </div>
         <div className="logo__box">
           <img src="../public/logo.svg" className="logo" alt="logo" />
