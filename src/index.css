@@ -22,6 +22,8 @@ body {
   display: grid;
   place-items: center;
   height: auto;
+
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -196,6 +198,11 @@ body {
   line-height: normal;
 }
 
+.slider__box {
+  display: flex;
+  gap: 3rem;
+}
+
 .slider__img {
   width: 27rem;
   border-radius: 1rem;
@@ -255,6 +262,48 @@ body {
 .btn--orange:active,
 .slider__btn:active {
   transform: scale(0.9);
+}
+
+/********** MODAL **********/
+
+.overlay {
+  display: grid;
+  place-items: center;
+}
+
+.modal__wrapper {
+  position: relative;
+  width: 85%;
+  overflow: hidden;
+}
+
+.modal {
+  background-color: #030303;
+  color: #fff7f0;
+  padding: 7rem 5rem;
+  border-radius: 1rem;
+}
+
+.form__box {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input {
+  z-index: 9999;
+  padding: 1.4rem 2rem;
+  border: none;
+  border-radius: 2.8rem;
+}
+
+.modal__img {
+  height: 15rem;
+  position: absolute;
+  top: 12%;
+  left: 18%;
+  z-index: 3;
+  opacity: 40%;
 }
 
 /**********************  TABLET SIZE **********************/
