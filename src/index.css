@@ -213,6 +213,42 @@ body {
   border-radius: 50%;
 }
 
+/* CTA */
+
+.cta {
+  padding: 0 1.6rem 3.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4.2rem;
+}
+
+.cta__box {
+  background-color: #030303;
+  color: #fff7f0;
+  padding: 4.8rem 2.4rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.cta__text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.cta__heading {
+  font-size: 2.6rem;
+}
+
+.cta__text {
+  text-align: center;
+  line-height: 26px;
+}
+
 /**********************  TABLET SIZE **********************/
 
 @media screen and (min-width: 48em) {
@@ -317,6 +353,29 @@ body {
   .slider__img {
     width: 54rem;
   }
+
+  /* CTA */
+
+  .cta {
+    padding: 0 3.9rem 5.6rem;
+    gap: 5.6rem;
+  }
+
+  .cta__box {
+    gap: 2.6rem;
+    padding: 5.6rem 7.5rem;
+  }
+
+  .cta__text-box {
+  }
+
+  .cta__heading {
+    font-size: 3.2rem;
+  }
+
+  .cta__text {
+    line-height: 28px;
+  }
 }
 
 /**********************  DESKTOP SIZE **********************/
@@ -405,4 +464,35 @@ body {
   .slider {
     padding: 8.8rem 0;
   }
+
+  /* CTA */
+
+  .cta {
+    padding: 0 16.5rem 6.8rem;
+    gap: 5.6rem;
+  }
+
+  .cta__box {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2.6rem;
+    padding: 5.6rem 7.5rem;
+  }
+
+  .cta__text-box {
+    width: 54rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+  }
+
+  .cta__text {
+    text-align: left;
+  }
+
+  .cta__heading {
+    font-size: 4rem;
+  }
 }
+
+/* PUSH IT TO GITHUB  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! delete this */

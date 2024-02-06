@@ -1,5 +1,3 @@
-/* Book a call with me I’d love to have a chat to see how I can help you. The best first step is for us to discuss your project during a free consultation. Then we can move forward from there. Free Consultation Free Consultation */
-
 export default function App() {
   return (
     <div className="wrapper">
@@ -106,6 +104,24 @@ export default function App() {
           <button className="slider__btn button__next">
             <img src="../public/icon-arrow-right.svg" />
           </button>
+        </div>
+      </section>
+
+      <section className="cta">
+        <div className="cta__box">
+          <div className="cta__text-box">
+            <h2 className="cta__heading">Book a call with me</h2>
+            <p className="cta__text">
+              I&apos;d love to have a chat to see how I can help you. The best
+              first step is for us to discuss your project during a free
+              consultation. Then we can move forward from there.
+            </p>
+          </div>
+          <button className="btn btn__orange">Free Consultation</button>
+        </div>
+        <div className="logo__box">
+          <img src="../public/logo.svg" className="logo" alt="logo" />
+          <button className="btn btn--black">Free Consultation</button>
         </div>
       </section>
     </div>
