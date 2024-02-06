@@ -167,7 +167,12 @@ export default function App() {
           </div>
           <div className="logo__box">
             <img src="../public/logo.svg" className="logo" alt="logo" />
-            <button className="btn btn--black">Free Consultation</button>
+            <button
+              className="btn btn--black"
+              onClick={() => setIsModalOpen(true)}
+            >
+              Free Consultation
+            </button>
           </div>
         </section>
       </div>

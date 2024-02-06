@@ -31,6 +31,7 @@ body {
   background-color: #fff7f0;
   height: max-content;
   overflow: hidden;
+  position: relative;
 }
 
 .heading {
@@ -267,8 +268,15 @@ body {
 /********** MODAL **********/
 
 .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   display: grid;
   place-items: center;
+  background-color: rgba(197, 194, 194, 0.488);
+  backdrop-filter: blur(8px);
 }
 
 .modal__wrapper {
@@ -300,8 +308,8 @@ body {
 .modal__img {
   height: 15rem;
   position: absolute;
-  top: 12%;
-  left: 18%;
+  top: 38px;
+  right: -18px;
   z-index: 3;
   opacity: 40%;
 }
@@ -432,6 +440,26 @@ body {
 
   .cta__text {
     line-height: 28px;
+  }
+
+  /* ********* MODAL ********* */
+
+  .modal__wrapper {
+    width: 70%;
+  }
+
+  .modal {
+    padding: 7rem 10rem;
+  }
+
+  .form__box {
+    gap: 2.2rem;
+  }
+
+  .modal__img {
+    height: 18rem;
+    top: 14px;
+    right: -20px;
   }
 }
 
@@ -574,5 +602,25 @@ body {
   .btn--orange:active,
   .slider__btn:active {
     transform: scale(0.9);
+  }
+
+  /* ********* MODAL ********* */
+
+  .modal__wrapper {
+    width: 50%;
+  }
+
+  .modal {
+    padding: 8rem 12rem;
+  }
+
+  .form__box {
+    gap: 2.4rem;
+  }
+
+  .modal__img {
+    height: 20rem;
+    top: 10px;
+    right: -25px;
   }
 }
