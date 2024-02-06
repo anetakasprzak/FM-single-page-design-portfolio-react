@@ -251,6 +251,12 @@ body {
   line-height: 26px;
 }
 
+.btn--black:active,
+.btn--orange:active,
+.slider__btn:active {
+  transform: scale(0.9);
+}
+
 /**********************  TABLET SIZE **********************/
 
 @media screen and (min-width: 48em) {
@@ -507,9 +513,17 @@ body {
   .btn--black:hover,
   .slider__btn:hover {
     background-color: #755cde;
+    transform: scale(1.1);
   }
 
   .btn--orange:hover {
     background-color: #f6a560;
+    transform: scale(1.1);
+  }
+
+  .btn--black:active,
+  .btn--orange:active,
+  .slider__btn:active {
+    transform: scale(0.9);
   }
 }
