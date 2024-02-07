@@ -1,16 +1,29 @@
 import { useState } from "react";
 
+const data = [
+  {
+    src: "image-slide-1.jpg",
+    alt: "pattern-1",
+  },
+  {
+    src: "image-slide-2.jpg",
+    alt: "pattern-2",
+  },
+  {
+    src: "image-slide-3.jpg",
+    alt: "pattern-3",
+  },
+  {
+    src: "image-slide-4.jpg",
+    alt: "pattern-4",
+  },
+  {
+    src: "image-slide-5.jpg",
+    alt: "pattern-5",
+  },
+];
+
 export default function App() {
-  // let curSlide = 0;
-
-  // function nextSlide() {
-  //   curSlide++;
-  // }
-
-  // function previousSlide() {
-  //   curSlide--;
-  // }
-
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -115,38 +128,7 @@ export default function App() {
           </div>
         </section>
 
-        <section className="slider">
-          <h2 className="slider__heading">My Work</h2>
-
-          <div className="slider__box">
-            <img
-              src="../public/image-slide-1.jpg"
-              alt="slide 1"
-              className="slider__img"
-            />
-
-            <img
-              src="../public/image-slide-2.jpg"
-              alt="slide 2"
-              className="slider__img"
-            />
-
-            <img
-              src="../public/image-slide-3.jpg"
-              alt="slide 3"
-              className="slider__img"
-            />
-          </div>
-
-          <div className="buttons__box">
-            <button className="slider__btn button__previous">
-              <img src="../public/icon-arrow-left.svg" />
-            </button>
-            <button className="slider__btn button__next">
-              <img src="../public/icon-arrow-right.svg" />
-            </button>
-          </div>
-        </section>
+        <Slider slides={data} />
 
         <section className="cta">
           <div className="cta__box">
@@ -180,6 +162,12 @@ export default function App() {
       {isModalOpen && (
         <div className="overlay">
           <div className="modal__wrapper">
+            <button
+              className="btn__closing-modal"
+              onClick={() => setIsModalOpen(false)}
+            >
+              Cancel
+            </button>
             <div className="modal">
               <form className="form__box">
                 <input
@@ -205,5 +193,54 @@ export default function App() {
         </div>
       )}
     </div>
+  );
+}
+
+function Slider({ slides }) {
+  const [currentSlide, setCurrentSlide] = useState(1);
+
+  if (!Array.isArray(slides) || slides.length <= 0) {
+    return null;
+  }
+
+  const prev = () =>
+    setCurrentSlide((curr) => (curr === 0 ? slides.length - 1 : curr - 1));
+
+  const next = () =>
+    setCurrentSlide((curr) => (curr === slides.length - 1 ? 0 : curr + 1));
+
+  return (
+    <section className="slider">
+      <h2 className="slider__heading">My Work</h2>
+
+      <div className="slider__box">
+        <div
+          style={{
+            transform: `translateX(-${currentSlide * 100}%)`,
+            display: "flex",
+          }}
+        >
+          {slides?.map((img, index) => {
+            return (
+              <img
+                key={index}
+                src={img.src}
+                alt={img.alt}
+                className="slider__img"
+              />
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="buttons__box">
+        <button className="slider__btn button__previous" onClick={prev}>
+          <img src="../public/icon-arrow-left.svg" />
+        </button>
+        <button className="slider__btn button__next" onClick={next}>
+          <img src="../public/icon-arrow-right.svg" />
+        </button>
+      </div>
+    </section>
   );
 }

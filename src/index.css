@@ -202,6 +202,7 @@ body {
 .slider__box {
   display: flex;
   gap: 3rem;
+  transition: transform ease-out;
 }
 
 .slider__img {
@@ -283,6 +284,24 @@ body {
   position: relative;
   width: 85%;
   overflow: hidden;
+}
+
+.btn__closing-modal {
+  position: absolute;
+  color: #fff7f0;
+  background-color: transparent;
+  border: none;
+  top: 15px;
+  left: 15px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn__closing-modal:hover {
+  color: #eb7565;
+  border-bottom: 1px solid #eb7565;
 }
 
 .modal {
@@ -446,6 +465,12 @@ body {
 
   .modal__wrapper {
     width: 70%;
+  }
+
+  .btn__closing-modal {
+    top: 17px;
+    left: 17px;
+    font-size: 1.4rem;
   }
 
   .modal {
