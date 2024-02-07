@@ -25,6 +25,7 @@ const data = [
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isThankyouOpen, setIsThankyouOpen] = useState(false);
 
   return (
     <div className="wrapper">
@@ -162,28 +163,43 @@ export default function App() {
       {isModalOpen && (
         <div className="overlay">
           <div className="modal__wrapper">
-            <button
-              className="btn__closing-modal"
-              onClick={() => setIsModalOpen(false)}
-            >
-              Cancel
-            </button>
             <div className="modal">
-              <form className="form__box">
-                <input
-                  className="input"
-                  type="text"
-                  placeholder="Your name.."
-                />
+              {!isThankyouOpen && (
+                <>
+                  <button
+                    className="btn__closing-modal"
+                    onClick={() => setIsModalOpen(false)}
+                  >
+                    Cancel
+                  </button>
+                  <form className="form__box">
+                    <input
+                      className="input"
+                      type="text"
+                      placeholder="Your name.."
+                    />
 
-                <input
-                  className="input"
-                  type="email"
-                  placeholder="Your email.."
-                />
+                    <input
+                      className="input"
+                      type="email"
+                      placeholder="Your email.."
+                    />
 
-                <button className="btn btn--orange">Submit</button>
-              </form>
+                    <button
+                      className="btn btn--orange"
+                      onClick={() => setIsThankyouOpen(true)}
+                    >
+                      Submit
+                    </button>
+                  </form>
+                </>
+              )}
+              {isThankyouOpen && (
+                <Thankyou
+                  setIsModalOpen={setIsModalOpen}
+                  setIsThankyouOpen={setIsThankyouOpen}
+                />
+              )}
               <img
                 src="../public/pattern-motion-graphics.svg"
                 className="modal__img"
@@ -192,6 +208,23 @@ export default function App() {
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+function Thankyou({ setIsModalOpen, setIsThankyouOpen }) {
+  return (
+    <div>
+      <button
+        className="btn__closing-modal"
+        onClick={() => {
+          setIsThankyouOpen(false);
+          setIsModalOpen(false);
+        }}
+      >
+        Close
+      </button>
+      <p className="thankyou__text">Thank You!</p>
     </div>
   );
 }
