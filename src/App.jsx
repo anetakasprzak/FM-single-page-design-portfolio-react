@@ -206,7 +206,7 @@ function AboutAmy({ setIsModalOpen }) {
 }
 
 function Slider({ slides }) {
-  const [currentSlide, setCurrentSlide] = useState(1);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   if (!Array.isArray(slides) || slides.length <= 0) {
     return null;
@@ -219,26 +219,22 @@ function Slider({ slides }) {
     setCurrentSlide((curr) => (curr === slides.length - 1 ? 0 : curr + 1));
 
   return (
-    <section className="slider">
+    <section className="slider_wrapper">
       <h2 className="slider__heading">My Work</h2>
 
-      <div className="slider__box">
-        {slides?.map((img, index) => {
-          return (
-            <img
-              style={{
-                transform: `translateX(-${currentSlide * 100}%)`,
-                display: "flex",
-              }}
-              key={index}
-              src={img.src}
-              alt={img.alt}
-              className="slider__img"
-            />
-          );
-        })}
+      <div className="slider">
+        {slides.map((s, i) => (
+          <div
+            className="slide"
+            key={i}
+            style={{
+              transform: `translateX(${100 * (i - currentSlide)}%)`,
+            }}
+          >
+            <img src={s.src} alt={s.alt} />
+          </div>
+        ))}
       </div>
-
       <div className="buttons__box">
         <button className="slider__btn button__previous" onClick={prev}>
           <img src="../public/icon-arrow-left.svg" />
