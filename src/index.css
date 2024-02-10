@@ -224,7 +224,6 @@ body {
 .buttons__box {
   display: flex;
   gap: 2.2rem;
-  z-index: 9;
 }
 
 .slider__btn {

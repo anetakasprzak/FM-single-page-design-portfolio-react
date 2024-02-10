@@ -26,7 +26,6 @@ const data = [
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isThankyouOpen, setIsThankyouOpen] = useState(false);
-  const [name, setName] = useState("");
 
   return (
     <div className="wrapper">
@@ -39,64 +38,70 @@ export default function App() {
       </div>
 
       {isModalOpen && (
-        <div className="overlay">
-          <div className="modal__wrapper">
-            <div className="modal">
-              {!isThankyouOpen && (
-                <>
-                  <button
-                    className="btn__closing-modal"
-                    onClick={() => setIsModalOpen(false)}
-                  >
-                    Cancel
-                  </button>
-                  <form
-                    className="form__box"
-                    onSubmit={(e) => {
-                      setTimeout(() => {
-                        e.preventDefault();
-                        console.log("called");
-                      }, 500);
-                    }}
-                  >
-                    <input
-                      className="input"
-                      type="text"
-                      placeholder="Your name.."
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                    />
-
-                    <input
-                      className="input"
-                      type="email"
-                      placeholder="Your email.."
-                    />
-
-                    <button
-                      className="btn btn--orange"
-                      onClick={() => setIsThankyouOpen(true)}
-                    >
-                      Submit
-                    </button>
-                  </form>
-                </>
-              )}
-              {isThankyouOpen && (
-                <Thankyou
-                  setIsModalOpen={setIsModalOpen}
-                  setIsThankyouOpen={setIsThankyouOpen}
-                  name={name}
-                />
-              )}
-              <img
-                src="../public/pattern-motion-graphics.svg"
-                className="modal__img"
-              />
-            </div>
-          </div>
-        </div>
+        <Modal
+          isThankyouOpen={isThankyouOpen}
+          setIsModalOpen={setIsModalOpen}
+          setIsThankyouOpen={setIsThankyouOpen}
+        />
       )}
+    </div>
+  );
+}
+
+function Modal({ isThankyouOpen, setIsModalOpen, setIsThankyouOpen }) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!name || !email) return;
+    console.log(name, email);
+
+    setTimeout(() => setIsThankyouOpen(true), 3000);
+  }
+
+  return (
+    <div className="overlay">
+      <div className="modal__wrapper">
+        <div className="modal">
+          {!isThankyouOpen && (
+            <>
+              <button
+                className="btn__closing-modal"
+                onClick={() => setIsModalOpen(false)}
+              >
+                Cancel
+              </button>
+              <form className="form__box" onSubmit={handleSubmit}>
+                <input
+                  className="input"
+                  type="text"
+                  placeholder="Your name.."
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+
+                <input
+                  className="input"
+                  type="email"
+                  placeholder="Your email.."
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+
+                <button className="btn btn--orange">Submit</button>
+              </form>
+            </>
+          )}
+          {isThankyouOpen && (
+            <Thankyou
+              setIsModalOpen={setIsModalOpen}
+              setIsThankyouOpen={setIsThankyouOpen}
+              name={name}
+            />
+          )}
+          <img src="pattern-motion-graphics.svg" className="modal__img" />
+        </div>
+      </div>
     </div>
   );
 }
@@ -105,7 +110,7 @@ function Heading({ setIsModalOpen }) {
   return (
     <section className="heading">
       <div className="logo__box">
-        <img src="../public/logo.svg" className="logo" alt="logo" />
+        <img src="logo.svg" className="logo" alt="logo" />
         <button className="btn btn--black" onClick={() => setIsModalOpen(true)}>
           Free Consultation
         </button>
@@ -127,52 +132,40 @@ function Grid() {
       <div className="grid--el grid--1">
         <img
           className="grid__img"
-          src="../public/pattern-graphic-design.svg"
+          src="pattern-graphic-design.svg"
           alt="image"
         />
         <p className="grid__text">Graphic Design</p>
       </div>
 
       <div className="grid--el grid--2">
-        <img
-          className="grid__img"
-          src="../public/pattern-ui-ux.svg"
-          alt="image"
-        />
+        <img className="grid__img" src="pattern-ui-ux.svg" alt="image" />
         <p className="grid__text">UI/UX</p>
       </div>
 
       <div className="grid--el grid--3">
-        <img
-          className="grid__img"
-          src="../public/pattern-apps.svg"
-          alt="image"
-        />
+        <img className="grid__img" src="pattern-apps.svg" alt="image" />
         <p className="grid__text">Apps</p>
       </div>
 
       <div className="grid--el grid--4">
         <img
           className="grid__img"
-          src="../public/pattern-illustrations.svg"
+          src="pattern-illustrations.svg"
           alt="image"
         />
         <p className="grid__text">Illustrations</p>
       </div>
 
       <div className="grid--el grid--5">
-        <img
-          className="grid__img"
-          src="../public/pattern-photography.svg"
-          alt="image"
-        />
+        <img className="grid__img" src="pattern-photography.svg" alt="image" />
         <p className="grid__text">Photography</p>
       </div>
 
       <div className="grid--el grid--6">
         <img
           className="grid__img"
-          src="../public/pattern-motion-graphics.svg"
+          src="pattern-motion-graphics.svg"
           alt="image"
         />
         <p className="grid__text">Motion Graphics</p>
@@ -184,7 +177,7 @@ function Grid() {
 function AboutAmy({ setIsModalOpen }) {
   return (
     <section className="amy__about">
-      <img src="../public/image-amy.webp" alt="amy img" className="amy__img" />
+      <img src="image-amy.webp" alt="amy img" className="amy__img" />
       <div className="amy__text-box">
         <h2 className="amy__heading">
           I&apos;m Amy, and I&apos;d love to work on your next project
@@ -237,10 +230,10 @@ function Slider({ slides }) {
       </div>
       <div className="buttons__box">
         <button className="slider__btn button__previous" onClick={prev}>
-          <img src="../public/icon-arrow-left.svg" />
+          <img src="icon-arrow-left.svg" />
         </button>
         <button className="slider__btn button__next" onClick={next}>
-          <img src="../public/icon-arrow-right.svg" />
+          <img src="icon-arrow-right.svg" />
         </button>
       </div>
     </section>
@@ -267,7 +260,7 @@ function Cta({ setIsModalOpen }) {
         </button>
       </div>
       <div className="logo__box">
-        <img src="../public/logo.svg" className="logo" alt="logo" />
+        <img src="logo.svg" className="logo" alt="logo" />
         <button className="btn btn--black" onClick={() => setIsModalOpen(true)}>
           Free Consultation
         </button>
